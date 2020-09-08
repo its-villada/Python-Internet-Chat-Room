@@ -10,15 +10,16 @@ class Client:
         
         while 1:
             try:
-                host = input('Enter host name --> ')
-                port = int(input('Enter port --> '))
+                print('ITS VILLADA ##### Sala de chat de 7mo B')
+                host = input('Ingresá el IP del servidor --> ')
+                port = int(input('Ingresá el puerto --> '))
                 self.s.connect((host,port))
                 
                 break
             except:
                 print("Couldn't connect to server")
 
-        self.username = input('Enter username --> ')
+        self.username = input('Ingresá tú username --> ')
         self.s.send(self.username.encode())
         
         message_handler = threading.Thread(target=self.handle_messages,args=())
